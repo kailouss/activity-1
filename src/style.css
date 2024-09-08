@@ -1,29 +1,37 @@
+@import url(styles/headercont.css);
+@import url(styles/taskbox.css);
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
+    justify-items: center;
     height: 100vh;
-    margin: 0;
-    background-color: #f4f4f4;
+    margin: 0 10% 0 10%;
     padding: 0;
-    box-sizing: border-box;
+
+    background-image: url('../images/vaporwave.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: scroll;
   }
-  
-  .main-container {
-    border-radius: 5px;
+
+.main-container {
     box-shadow: 0 0 10px rgba(0, 0, 0, 1);
-    border: 1px solid rgb(211, 211, 211);
+    border: 5px inset #AF1281;
+    max-width: 40vw;
     width: 100%;
-    max-width: 60vw;
+    min-width: 30vw;
+    height: 60%;
     max-height: 80vh;
-    margin: 10px;
-    padding: 0 5% 0 5%;
+    margin: 10px 10px 0 10px;
     box-sizing: border-box;
-    background-color: rgb(144, 88, 201);
+    background-color:#E65C9C;
     overflow: auto;
     overflow-x: hidden;
-    clip-path: inset(0 0 0 0 round 5%);
+    clip-path: inset(0 0 0 0 round 3%);
 }
 
 ::-webkit-scrollbar {
@@ -41,172 +49,49 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #555; 
 }
-
-.header-cont {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.header-cont input {
-    width: auto;
-    flex: 1;
-    padding: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
-}
-
-.header-cont button {
-    padding: 10px;
-    width: 30%;
-}
-
-h1 {
-    text-align: center;
-    margin: 10% 20% 10% 0;
-    width: 100%;
-    font-size: 6vw;
-
-}
-
-button {
-    background-color: #28a745;
+  
+.sort-button {
     color: white;
+    padding: 10px 15px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    padding: 10px 20px;
-    margin: 10px 0;
-}
-.header-cont button{
-    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
-}
-
-.header-cont button:hover {
-    background-color: #218838;
-}
-
-.task-box {
-    margin: 5% 0 5% 0; /* top right bottom left*/
-    border: 3px rgb(255, 255, 255) solid; 
-    display: flex;
-    flex-direction: column;
-    max-height: 60vh;
-    height: 50vh;
-    overflow: scroll;
-    overflow-x: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
-} 
-
-.no-task {
-    text-align: center;
-    font-size: 4em;
-    color: #ffffff;
-    margin: auto;
-}
-
-.task-child-cont {
-    background-color: #f4f4f4;
-    height: 15%;
-    font-size: 15px;
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    margin: 5px 25px 0 25px;
-    border-radius: 10px;
-    min-height: 15%;
-    overflow:hidden;
-    transition: 0.3s ease;
-}
-
-.task-child-cont:hover {
-    opacity: .8;
-    transform: scale(1.1);  
-}
-
-.task-child-cont span {
-    flex: 1;
-}
-
-.task-child-cont.completed {
-    background-color: #7edd2c;
-}
-
-.task-name-container {
-    display: flex;
-    width: 80%;
-    height: 100%;
-    gap: 10%;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.task-name {
-    font-weight: bold;
-    font-family: Arial, sans-serif;
-    font-size: 100%;
-    max-width: 60%;
-    min-width: 60%;
-    overflow: hidden;
-    max-height: 100%;
-}
-
-.task-name.completed {
-    text-decoration: line-through;
-    color: #ffffff;
-}
-
-.date-cont {
-    font-size: 0.8em;
-    color: #777;
-    min-width: 40%;
-    max-width: 40%;
-}
-
-.delete-button {
-    background: none;
-    border: none;
-    padding: 0;
   }
 
-.checkbox {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    background: #fff;
-    border: 3px solid #28a745;
-    border-radius: 4px;
+.sort-button:hover{
+    background-color: #2e8a17;
 }
 
-.checkbox:checked {
-    background-color: #28a745;
-    border-color: #28a745;
-}
-
-.delcheck-cont {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
+.sort-by-cont {
     position: relative;
+    display: inline-block;
+    margin: 0 5% 0 0;
+    align-self: flex-end;
+  }
+
+.sort-options {
+    display: flex;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    z-index: 1;
+    padding: 10px;
     right: 0;
-    margin-left: auto;
+  }
+
+.sort-option:hover {
+    background-color: #1a5b9b;
 }
 
-.delcheck-cont button, .delcheck-cont .checkbox {
-    width: 20px;
-    height: 20px;
+.sort-options button {
+    background-color: white;
+    color: black;
+    text-align: left;
+    border: none;
     cursor: pointer;
-}
-
-
-.delete-button:hover {
-    opacity: .5;
-}
-
-.delete-button img {
-    width: 20px;
-    height: 20px;
-}
+    transition: 0.1s ease;
+  }
+  
+  .sort-options button:hover {
+    background-color: #ffffff;
+    transform: scale(1.1);
+  }

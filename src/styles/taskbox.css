@@ -1,0 +1,131 @@
+.task-box {
+    margin: 5% 0 5% 0; /* top right bottom left*/
+    border: 3px rgb(255, 255, 255) solid; 
+    display: flex;
+    flex-direction: column;
+    max-height: 60vh;
+    height: 50vh;
+    max-width: 80vwmin;
+    width: 50%;
+    overflow: scroll;
+    overflow-x: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    background-color: #FB8CAB;
+} 
+
+.no-task {
+    text-align: center;
+    font-size: 8vmin;
+    color: #ffffff;
+    margin: auto;
+}
+
+.task-child-cont {
+    background-color: #f4f4f4;
+    height: 15%;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 5px 25px 0 25px;
+    border-radius: 10px;
+    min-height: 15%;
+    transition: 0.3s ease;
+    
+}
+
+.task-child-cont:hover {
+    opacity: .8;
+    transform: scale(1.1);  
+}
+
+.task-child-cont span {
+    flex: 1;
+}
+
+.task-child-cont.completed {
+    background-color: #7edd2c;
+}
+
+.task-name-container {
+    display: flex;
+    width: 80%;
+    height: 100%;
+    gap: 10%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task-name {
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 100%;
+    max-width: 60%;
+    min-width: 60%;
+    overflow: hidden;
+    max-height: 100%;
+}
+
+.task-name.completed {
+    text-decoration: line-through;
+    color: #ffffff;
+}
+
+.date-cont {
+    font-size: 0.8em;
+    color: #777;
+    min-width: 40%;
+    max-width: 40%;
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+.checkbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border: 1px solid #28a745;
+    border-radius: 4px;
+}
+
+.checkbox:checked {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.delcheck-cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    position: relative;
+    right: 0;
+    margin-left: auto;
+    width: auto;
+}
+
+.delcheck-cont button, .delcheck-cont .checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+
+.delete-button:hover {
+    opacity: .5;
+}
+
+.delete-button img {
+    width: 20px;
+    height: 20px;
+}
+
+.overdue {
+    background-color: #f84848; /* Light red background for overdue tasks */
+    color: #fff;
+  }
