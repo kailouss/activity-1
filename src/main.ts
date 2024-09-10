@@ -102,27 +102,25 @@ export function addTask(taskName: string, taskDate: string) {
   deleteButton.addEventListener('click', () => {
       taskBox?.removeChild(taskChildCont);
 
-  checkNoTask(taskBox)
+      
+      const taskChildren = Array.from(taskBox?.children || []).filter(child => 
+        !child.classList.contains('top-bar')
+      );
 
-  const taskChildren = Array.from(taskBox?.children || []).filter(child => 
-    !child.classList.contains('top-bar')
-  );
-
-  // console.log('TaskBox children count after deletion:', taskBox?.children.length);
-
-  // check and remove the container if no tasks are left
-  if (taskChildren.length === 0) {
-    const sortByCont = document.querySelector('.sort-by-cont');
-    if (sortByCont) {
-      // console.log('container found, removing it.');
-      sortByCont.remove();
-    } else {
-      // console.log('container not found.');
-    }
-  }
-
-  checkNoTask(taskBox);
-
+      // console.log('TaskBox children count after deletion:', taskBox?.children.length);
+      
+      // check and remove the container if no tasks are left
+      if (taskChildren.length === 0) {
+        const sortByCont = document.querySelector('.sort-by-cont');
+        if (sortByCont) {
+          // console.log('container found, removing it.');
+          sortByCont.remove();
+        } else {
+          // console.log('container not found.');
+        }
+      }
+      
+      checkNoTask(taskBox)
   });
 
   checkNoTask(taskBox);

@@ -5,9 +5,10 @@ noTask.textContent = 'No Task';
 function checkNoTask(taskBox: Element | null) {
     if (!taskBox) return;
 
-    const taskChildren = Array.from(taskBox.children);
+    const taskChildren = Array.from(taskBox.children).filter(child => 
+        !child.classList.contains('top-bar'));
 
-    if (taskChildren.length === 1) {
+    if (taskChildren.length === 0) {
         if (!taskBox.contains(noTask)) {
             taskBox.appendChild(noTask);
         }
