@@ -1,17 +1,26 @@
 import checkNoTask from "./components/noTask";
 import { checkOverdue } from "./components/checkOverdue";
 import sortTasks from "./components/sortTask";
+import { saveTask, loadTask, clearTask } from "./components/saveloadTask";
 
 const taskBox = document.querySelector('.task-box');
 
+document.getElementById('load-button')?.addEventListener('click', loadTask);
+document.getElementById('save-button')?.addEventListener('click', saveTask);
+document.getElementById('clear-button')?.addEventListener('click', clearTask);
+
 //add task func
-function addTask(taskName: string, taskDate: string) {
+export function addTask(taskName: string, taskDate: string) {
+  const taskBox = document.querySelector('.task-box');
 
  // Add "sort by" container if it doesn't exist
  let sortByCont = document.querySelector('.sort-by-cont');
  if (!sortByCont) {
   sortByCont = document.createElement('div');
   sortByCont.classList.add('sort-by-cont');
+
+  const topBar = document.createElement('div');
+  topBar.classList.add('top-bar');
 
   const sortByButton = document.createElement('button');
   sortByButton.classList.add('sort-button')
@@ -54,9 +63,8 @@ function addTask(taskName: string, taskDate: string) {
 
   sortByCont.appendChild(sortByButton);
   sortByCont.appendChild(optionsContainer);
-
-  const taskBox = document.querySelector('.task-box');
-  taskBox?.prepend(sortByCont)
+  topBar.appendChild(sortByCont);
+  taskBox?.prepend(topBar);
   // document.querySelector('.task-box')?.parentElement?.insertBefore(sortByCont, taskBox);
  }
 
@@ -94,28 +102,30 @@ function addTask(taskName: string, taskDate: string) {
   deleteButton.addEventListener('click', () => {
       taskBox?.removeChild(taskChildCont);
 
-      checkNoTask(taskBox);
+  checkNoTask(taskBox)
 
-      const taskChildren = Array.from(taskBox?.children || []).filter(child => 
-        !child.classList.contains('sort-by-cont')
-      );
+  const taskChildren = Array.from(taskBox?.children || []).filter(child => 
+    !child.classList.contains('top-bar')
+  );
 
-      console.log('TaskBox children count after deletion:', taskBox?.children.length);
+  // console.log('TaskBox children count after deletion:', taskBox?.children.length);
 
-      // check and remove the container if no tasks are left
-      if (taskChildren.length === 0) {
-        const sortByCont = document.querySelector('.sort-by-cont');
-        if (sortByCont) {
-          console.log('container found, removing it.');
-          sortByCont.remove();
-        } else {
-          console.log('container not found.');
-        }
-      }
+  // check and remove the container if no tasks are left
+  if (taskChildren.length === 0) {
+    const sortByCont = document.querySelector('.sort-by-cont');
+    if (sortByCont) {
+      // console.log('container found, removing it.');
+      sortByCont.remove();
+    } else {
+      // console.log('container not found.');
+    }
+  }
 
-      checkNoTask(taskBox);
+  checkNoTask(taskBox);
 
   });
+
+  checkNoTask(taskBox);
 
   //checkbox
   const checkbox = document.createElement('input');

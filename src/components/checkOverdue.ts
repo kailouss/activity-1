@@ -13,7 +13,7 @@ export function checkOverdue(taskDateObj: Date,
       taskChildCont.classList.remove('overdue');
       // checkbox.style.backgroundColor = '#28a745'
       checkbox.style.borderColor = '#28a745'
-      checkbox.style.backgroundColor = 'green'
+      // checkbox.style.backgroundColor = 'green'
     }
   }
   

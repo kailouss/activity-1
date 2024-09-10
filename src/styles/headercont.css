@@ -28,15 +28,6 @@ h1 {
 
 }
 
-button {
-    background-color: #6ac719;
-    color: rgb(0, 0, 0);
-    border: 1px solid #2e8a17;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 10px 0;
-}
 .header-cont button{
     box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 }
@@ -44,3 +35,7 @@ button {
 .header-cont button:hover {
     background-color: #2e8a17;
 }
+
+/* .save-button button, .load-button button {
+
+} */

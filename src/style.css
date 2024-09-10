@@ -10,13 +10,22 @@ body {
     height: 100vh;
     margin: 0 10% 0 10%;
     padding: 0;
-
     background-image: url('../images/vaporwave.jpg');
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center;
     overflow: scroll;
   }
+
+button {
+    background-color: #6ac719;
+    color: rgb(0, 0, 0);
+    border: 1px solid #2e8a17;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px 0;
+}
 
 .main-container {
     box-shadow: 0 0 10px rgba(0, 0, 0, 1);
@@ -49,49 +58,3 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #555; 
 }
-  
-.sort-button {
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-  }
-
-.sort-button:hover{
-    background-color: #2e8a17;
-}
-
-.sort-by-cont {
-    position: relative;
-    display: inline-block;
-    margin: 0 5% 0 0;
-    align-self: flex-end;
-  }
-
-.sort-options {
-    display: flex;
-    position: absolute;
-    background-color: #ffffff;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
-    z-index: 1;
-    padding: 10px;
-    right: 0;
-  }
-
-.sort-option:hover {
-    background-color: #1a5b9b;
-}
-
-.sort-options button {
-    background-color: white;
-    color: black;
-    text-align: left;
-    border: none;
-    cursor: pointer;
-    transition: 0.1s ease;
-  }
-  
-  .sort-options button:hover {
-    background-color: #ffffff;
-    transform: scale(1.1);
-  }

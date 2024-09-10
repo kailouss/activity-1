@@ -1,16 +1,20 @@
-
 const noTask = document.createElement('div');
 noTask.classList.add('no-task');
 noTask.textContent = 'No Task';
 
 function checkNoTask(taskBox: Element | null) {
+    if (!taskBox) return;
 
-    if (taskBox?.children.length === 1 && taskBox.contains(noTask)) {
-        return;
-    } else if (taskBox?.children.length === 0) {
-        taskBox.appendChild(noTask);
+    const taskChildren = Array.from(taskBox.children);
+
+    if (taskChildren.length === 1) {
+        if (!taskBox.contains(noTask)) {
+            taskBox.appendChild(noTask);
+        }
     } else {
-        noTask.remove();
+        if (taskBox.contains(noTask)) {
+            noTask.remove();
+        }
     }
 }
 

@@ -5,13 +5,17 @@
     flex-direction: column;
     max-height: 60vh;
     height: 50vh;
-    max-width: 80vwmin;
+    max-width: 80vmin;
     width: 50%;
     overflow: scroll;
     overflow-x: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 1);
     background-color: #FB8CAB;
 } 
+
+.top-bar {
+    border: 1px solid black;
+}
 
 .no-task {
     text-align: center;
@@ -128,4 +132,56 @@
 .overdue {
     background-color: #f84848; /* Light red background for overdue tasks */
     color: #fff;
+  }
+
+.top-bar {
+    display: flex;
+    border: none;
+    justify-content: flex-end;
+}
+
+.sort-button {
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+  }
+
+.sort-button:hover{
+    background-color: #2e8a17;
+}
+
+.sort-by-cont {
+    position: relative;
+    display: inline-block;
+    margin: 0 5% 0 0;
+    align-self: flex-end;
+  }
+
+.sort-options {
+    display: flex;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    z-index: 1;
+    padding: 10px;
+    right: 0;
+  }
+
+.sort-option:hover {
+    background-color: #1a5b9b;
+}
+
+.sort-options button {
+    background-color: white;
+    color: black;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    transition: 0.1s ease;
+  }
+  
+  .sort-options button:hover {
+    background-color: #ffffff;
+    transform: scale(1.1);
   }
